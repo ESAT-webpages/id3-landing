@@ -1,0 +1,349 @@
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  
+
+.fixed-contact-icons {
+/*     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;*/
+    position: fixed; 
+/*     bottom: 20px;
+    right: 20px; */
+    z-index: 9999999;
+    pointer-events: none;
+/*     padding: 20px; 
+    gap: 8px; */
+}
+
+/* .fixed-contact-icons .icon-wrapper {
+    pointer-events: auto;
+    background-color: white;
+    border: 4px solid black;
+    border-radius: 9999px; 
+    width: 34px; 
+    height: 34px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px; 
+    color: black; 
+    padding: 8px;
+}
+
+.fixed-contact-icons .icon-wrapper:hover {
+    color: white; 
+    border-color: #EF7D00; 
+    background-color: #EF7D00; 
+}
+
+
+.fixed-contact-icons .whatsapp i {
+    width: 32px; 
+    height: 32px; 
+}
+
+.whatsapp i {
+    font-size: 34px; 
+
+}
+ */
+.container-menu {
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: absolute;
+    z-index: 1500;
+    padding-top: 60px;
+    padding-left: 25px;
+    padding-right: 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1500; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(67, 82, 81, 0.9); 
+}
+
+.modal-overlay {
+    z-index: 1500;
+    background-color: rgba(67, 82, 81, 0.9);
+    position: fixed;
+    inset: 0;
+  }
+  
+  .modal-content {
+    position: fixed;
+    inset: 0;
+    z-index: 1501;
+    background: transparent;
+    border: none;
+    border-radius: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-content {
+    padding: 20px;
+    border-radius: 0.5rem;
+    width: 66.666667%; 
+    text-align: center;
+    
+  }
+  
+  .close-btn {
+    color: white;
+    width: 100%;
+    text-align: right;
+    cursor: pointer;
+    font-size: 1.875rem; 
+    font-weight: 300; 
+  }
+  
+  .close-btn:hover, .menu-link:hover {
+    color: #d3d3d3;
+  }
+  
+  .menu-link {
+    color: white;
+    width: 100%;
+    display: block;
+    text-transform: uppercase;
+    font-size: 1.875rem; 
+    font-weight: 300;
+    padding-bottom: 32px; 
+  }
+
+#hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+    cursor: pointer;
+}
+
+#hamburger-icon span {
+    display: block;
+    width: 32px; 
+    height: 2px;
+    background-color: white;
+}
+
+#hamburger-icon span:hover {
+  background-color: #d3d3d3;
+}
+
+
+.logo {
+    max-width: 124px; 
+}
+
+.edu-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: #333333;
+  height: 100vh;
+  position: relative;
+  z-index: 99;
+}
+
+.edu-inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+
+.edu-main-focus{
+  width: 100%; 
+  font-size: 2.4rem; 
+  font-weight: 600; 
+  text-align: center; 
+  line-height: 15px; 
+  letter-spacing: -0.05em; 
+  margin-top: -20px;
+}
+
+.edu-program-description {
+  width: 50%; 
+  font-size: 0.875rem; 
+  padding-bottom: 1rem; 
+  line-height: 1.25; 
+  margin-top: -20px;
+}
+
+.edu-enroll-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7rem; 
+  text-decoration: none;
+  width: 100%;
+}
+
+.edu-enroll-button {
+  padding: 0.75rem; 
+  background-color: #EF7D00;
+  color: white;
+  font-size: 1.125rem; 
+  border-radius: 0.875rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.edu-enroll-button:hover {
+  background-color: #d97000;
+}
+
+
+.edu-bg-container {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  z-index: -99; 
+}
+
+.edu-bg-video-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  right: 50%; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.edu-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.edu-bg-overlay {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  z-index: 99; 
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 2rem;
+}
+
+
+@media (min-width: 350px) { /* sm */
+
+  .edu-content-wrapper {
+    gap: 8px; 
+  }
+
+  #id3-brand-white {
+    width:80%;
+  }
+
+  .edu-enroll-button {
+    width:80%;
+  }
+  
+
+
+}
+
+
+@media (min-width: 768px) { /* md */
+    .container-menu {
+        padding-left: 110px;
+        padding-right: 110px;
+    }
+
+    .logo {
+        max-width: 164px;
+    }
+
+
+  .edu-content-wrapper {
+    gap: 16px; /* md:gap-4 (assuming 1rem = 16px, thus 1rem = 16px gap) */
+  }
+
+  .carousel-inner img {
+    max-width: 390px; /* Adjust if needed */
+  }
+
+
+}
+
+@media (min-width: 1080px) { /* tablet  */
+    .logo {
+        max-width: 220px;
+    }
+
+
+
+  #id3-brand-white {
+    width:40%;
+  }
+
+  .edu-enroll-button {
+    width:40%;
+  }
+  
+  .carousel-inner img {
+    max-width: 390px; /* Same as 'md', adjust if different for 'tablet' */
+  }
+  
+
+}
+
+
+@media (min-width: 1280px) { /* hd  */
+  .carousel-inner img {
+    max-width: 390px; /* Assuming 'lg' settings apply from 'hd', adjust if needed */
+  }
+}
+
+@media (min-width: 1440px) { /* desktop */
+
+  .carousel-inner img {
+    max-width: 320px; /* desktop:max-w-[320px] */
+  }
+
+}
+
+@media (min-width: 1920px) { /* lg */
+
+  .carousel-inner img {
+    max-width: 320px; /* Assuming no change from 'desktop', adjust if needed */
+  }
+
+}
