@@ -1,7 +1,65 @@
-  // import {ScrollMagic} from '../dist/js/ScrollMagic.min.js'; 
+//assets\dist\js\plugins\debug.addIndicators.min.js
 
-  //assets\dist\js\plugins\debug.addIndicators.min.js
+document.addEventListener('DOMContentLoaded', () => {
+  const videoWrapper = document.querySelector('.video-slide-wrapper');
+  const videoInner = videoWrapper.querySelector('.video-slide-inner');
+  const vidRef = videoInner.querySelector('video');
+  const playButton = videoWrapper.querySelector('.video-playbutton');
+  const videoSlideBack = videoWrapper.querySelector('.video-slide-background');
+
+  const initVideo = () => {
+
+    if (vidRef.paused) {
+      vidRef.play();
+      
+    } else {
+      vidRef.pause();
+    }
+
+    videoSlideBack.style.display = "none"
+  };
+
+  playButton.addEventListener('click', initVideo);
+});
  
+document.querySelector('.reserve-link').addEventListener('click', function(e) {
+  e.preventDefault();
+  const formContact = document.querySelector('#formContact');
+  if (formContact) {
+    formContact.scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
+
+document.getElementById('termsOfService').addEventListener('click', function() {
+  openModalLegal();
+});
+
+document.getElementById('privacyPolicy').addEventListener('click', function() {
+  openModalPrivacy();
+});
+
+function openModalLegal() {
+  // Code to open modal or popup for legal terms
+  alert('Opening legal terms...');
+}
+
+function openModalPrivacy() {
+  // Code to open modal or popup for privacy policy
+  alert('Opening privacy policy...');
+}
+
+function openPrivacyModal() {
+  document.getElementById('privacyModal').style.display = 'flex';
+}
+
+function openLegalModal() {
+  document.getElementById('legalModal').style.display = 'flex';
+}
+
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = 'none';
+}
 
   var header;
   var altHeader;
@@ -26,7 +84,7 @@
     overwrite: "auto"
   }); 
   
-  window.onload = initWeb();
+  window.onload = console.log('CARGADO!!!');
 
 
   var arrNomProfes;
@@ -296,62 +354,7 @@
     var tmpCampoEdad;
     var tmpCampoNombre;
 
-    botSubmit = document.querySelector('#btnSubmit');
 
-    botSubmit.addEventListener('click', (ev)=>{
-
-      ev.preventDefault();
-
-      tmpCampoNombre = document.querySelector('#name');
-
-      tmpCampoNombre = tmpCampoNombre.value;
-
-      if( !tmpCampoNombre || tmpCampoNombre.length =="" ){
-
-        muestroMensaje('#mensaje_form_nombre' , 'Escribe tu nombre');
-
-
-        return;
-      }else{
-        okCampo( '#mensaje_form_nombre' );
-      }
-
-
-      tmpCampoMail = document.querySelector('#email');
-
-      tmpCampoMail = tmpCampoMail.value;
-
-      if(tmpCampoMail.indexOf('@') ==-1 ){
-
-        muestroMensaje('#mensaje_form_mail' , 'Proporcione una dirección de mail correcta');
-        //avisoMail();
-        return;
-      }else{
-        okCampo( '#mensaje_form_mail' );
-      }
-
-      tmpCampoEdad = document.querySelector('#edad');
-
-      tmpCampoEdad = tmpCampoEdad.value;
-
-      if(tmpCampoEdad<18){
-
-
-        muestroMensaje('#mensaje_form_edad' , 'Debes ser mayor de 18 años');
-
-       // avisoEdad();
-        return;
-      }else{
-        okCampo( '#mensaje_form_edad' );
-      }
-
-      enviaMailOk();
-
-
-      //CHECK FORM
- 
-
-    });
 
   }
   
@@ -1347,6 +1350,9 @@ function iniciaLineas(){
 
 
 }
+
+
+
 
 
 
