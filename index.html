@@ -38,8 +38,8 @@
   <link rel="icon" type="image/png" href="assets/img/favicon-128.png" sizes="128x128" />
 
   <!-- CSS -->
-  <script src="https://kit.fontawesome.com/0b0c97df9d.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css" />
+<!--  <link rel="stylesheet" href="css/estilos.css" />  -->
   <link rel="stylesheet" href="dist/icomoon/icomoon.css">
   </link>
 
@@ -49,7 +49,7 @@
   <link href="dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/cover.css" rel="stylesheet">
 
-  <link href="css/estilos.css" rel="stylesheet">
+
 
   <link href="css/cover.css" rel="stylesheet">
 
@@ -82,7 +82,7 @@
   </div>
 
 
-  <header class="ancho_contenido fixed_top_100 pt-4 pb-4" id="header">
+  <header class="header_container fixed_header pt-4 pb-4" id="header">
 
     <div class="d-flex justify-content-between w-100">
       <a href="#" class="logo_esat pos_rel">
@@ -90,18 +90,17 @@
         <div style="background-image:url(assets/ESAT-white-orange.svg)" class="logo_tri"></div>
 
       </a>
-      <nav class="nav nav-masthead justify-content-center float-md-end nav-menu" id="nav-menu">
+      <nav class="nav-masthead justify-content-center float-md-end nav-menu" id="nav-menu">
 
-        <a id="menu_home" class="nav-link fw-medium py-1 px-0 " aria-current="page" href="#">Proyectos</a>
-        <a id="menu_dirigido" class="nav-link fw-medium py-1 px-0" href="#dirigido">Experiencias</a>
-        <a id="menu_duracion" class="nav-link fw-medium py-1 px-0" href="#duracion">Salidas Profesionales</a>
+        <a id="menu_home" class="nav-link fw-medium py-1 px-0 " aria-current="page" href="#eduCarousel">Proyectos</a>
+        <a id="menu_dirigido" class="nav-link fw-medium py-1 px-0" href="#experiencias">Experiencias</a>
+        <a id="menu_duracion" class="nav-link fw-medium py-1 px-0" href="#salidas-profesionales">Salidas Profesionales</a>
 
       </nav>
 
-
       <a href="#" class="menu_bot" id="menu_bot">
         <img src="assets/img/tri_menu_naranja.svg" id="menu_open">
-        <img src="assets/img/cruz_blanca.svg" id="menu_close">
+<!--         <img src="assets/img/cruz_blanca.svg" id="menu_close"> -->
       </a>
 
     </div>
@@ -238,7 +237,7 @@
   </div>
 
 
-  <div class="experiencia-slide">
+  <div id="experiencias" class="experiencia-slide">
     <p class="experiencia-first-text">
 
       Hemos ayudado a cientos de alumnas/os a
@@ -587,7 +586,7 @@
 
   <!-- Reserve Slide-->
 
-  <div class="reserve-container">
+  <div id="salidas-profesionales" class="reserve-container">
     <div class="reserve-content">
       <p class="reserve-text">
         Aprende las <span>competencias y habilidades<br class="reserve-break" /> digitales con mayor valor en el
@@ -708,7 +707,7 @@
 
   <!-- Form contact -->
 
-  <div class="form-container">
+  <div id="formContact" class="form-container">
 
     <h2 class="form-container-title">
       Este es el momento de dar el primer paso hacia
@@ -731,8 +730,9 @@
         </p>
 
         <div class="form-container-form-submit-phone">
-          <div style="margin-top: auto; margin-top: auto;"><img style="background-color:blueviolet;"
-              class="ico_llama ico_tel" src="assets/img/ico_phone.svg"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#333333" width="30px" height="30px">
+            <path d="M134.5 30.5v451h243v-451h-243zm-44.41.5c-43.64 41-73.2 116-73.2 203.7 0 87.8 29.87 164 73.83 204.4C61.5 392.4 42.5 318.5 42.5 234.7 42.5 152 61.13 78 90.09 31zm331.81 0c28.9 47 47.6 121.1 47.6 203.8 0 83.8-19 157.7-48.2 204.3 43.9-40.3 73.8-116.5 73.8-204.3 0-87.7-29.6-162.8-73.2-203.8zM235.2 50.5h41.6a8 8 0 0 1 0 16h-41.6a8 8 0 0 1 0-16zM126 80c-37.75 24.9-64.74 85-64.74 154.7 0 70.4 27.11 130.3 65.14 154.8-25.5-30.3-42.84-88.2-42.84-154.8 0-66.4 17.14-124.8 42.44-154.7zm260 0c25.3 30 42.4 88.4 42.4 154.8 0 66.6-17.3 124.5-42.8 154.8 38-24.5 65.1-84.5 65.1-154.8 0-69.7-27-129.8-64.7-154.8zm-236.5 3.5h211v343h-211v-343zm105.3 349a19.26 19.26 0 0 1 20 19.3 19.26 19.26 0 0 1-19.3 19.2 19.26 19.26 0 0 1-.7-38.5z"></path>
+          </svg>
           <p>(+34) 963 155 637</p>
         </div>
 
@@ -871,9 +871,9 @@
 
     <div class="footer-legal-links-mobile">
 
-      <p onClick="openLegalModal()">Aviso legal</p>
-      <p onClick="openPrivacyModal()">Política de privacidad</p>
-      <p>© Escuela Superior de Arte y Tecnología</p>
+      <p class="footer-legal-links-advice" onClick="openLegalModal()">Aviso legal</p>
+      <p class="footer-legal-links-privacy" onClick="openPrivacyModal()">Política de privacidad</p>
+      <p >© Escuela Superior de Arte y Tecnología</p>
 
     </div>
 
@@ -948,6 +948,7 @@
   <script src="dist/js/plugins/Draggable.min.js"></script>
   <script src="dist/js/plugins/debug.addIndicators.min.js"></script>
 
+  <!-- <script src="js/___scripts.js"></script> -->
   <script src="js/scripts.js"></script>
   <!--  <script type="module" src="js/image_comparison.js"></script> -->
 </body>

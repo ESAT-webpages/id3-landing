@@ -30,6 +30,37 @@ document.querySelector('.reserve-link').addEventListener('click', function(e) {
   }
 });
 
+document.getElementById('form-submit').addEventListener('submit', function(event) {
+  
+  event.preventDefault(); // Prevent default form submission behavior
+
+  const formData = new FormData(this);
+
+  console.log('formData', formData);
+
+  fetch('formv2.php', {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const contentType = response.headers.get("content-type");
+    if (contentType && contentType.includes("application/json")) {
+      return response.text(); // Convert response body to JSON
+    } else {
+      throw new TypeError("Response was not JSON");
+    }
+  }) // Assuming the server responds with JSON
+  .then((data) => {
+    console.log("data from response Mailjet", data);
+  })
+  .catch((error) => console.error("Fetch error:", error));
+});
 
 document.getElementById('termsOfService').addEventListener('click', function() {
   openModalLegal();
@@ -85,6 +116,7 @@ function closeModal(modalId) {
   }); 
   
   window.onload = console.log('CARGADO!!!');
+  window.onload = initWeb();
 
 
   var arrNomProfes;
@@ -161,11 +193,11 @@ function closeModal(modalId) {
   
       header = document.getElementById('header');
   
-      altHeader = header.getBoundingClientRect();
-      altHeader = altHeader.height;
+/*       altHeader = header.getBoundingClientRect();
+      altHeader = altHeader.height; */
   
       // init controller
-        controller = new ScrollMagic.Controller();
+/*         controller = new ScrollMagic.Controller();
   
       //console.log(controller);
   
@@ -174,7 +206,7 @@ function closeModal(modalId) {
           triggerElement : '#t_pres',  
         }).setClassToggle('#header', 'hide_header')
         //.addIndicators()
-        .addTo(controller);
+        .addTo(controller); */
   
   
         
@@ -204,11 +236,11 @@ function closeModal(modalId) {
       } */
   
   
-        hazMenuMovil();
+/*         hazMenuMovil();
   
         hazScrollingMenu();
   
-        hazScrollers();
+        hazScrollers(); */
   
 /*         hazProfes(); 
   
@@ -226,7 +258,7 @@ function closeModal(modalId) {
   
         //videoPerson = document.getElementById('in_video_person');
   
-        resizea();
+/*         resizea();
   
   
         imgRefAncho = document.getElementById('img_texto_ref');
@@ -240,7 +272,7 @@ function closeModal(modalId) {
 
         checkSize();
 
-        iniciaLineas();
+        iniciaLineas(); */
   
    
   }
@@ -825,45 +857,6 @@ function closeModal(modalId) {
   }
   
   
-  function hazMenuMovil(){
-  
-    arrMenuUp = document.querySelectorAll('.nav-link');
-  
-    arrMenuUp.forEach(m=>{
-        m.addEventListener('click', (b)=>{
-  
-  
-          menu_bot.classList.remove('open_menu');
-  
-          body.classList.remove('open_menu_body');
-  
-          navMenu.classList.remove('open_menu_nav');
-        });
-  
-  
-  
-    })
-  
-  
-  
-    menu_bot.addEventListener('click', (ev)=>{
-  
-      ev.preventDefault();
-      
-      ev.currentTarget.classList.toggle('open_menu');
-  
-      body.classList.toggle('open_menu_body');
-  
-      navMenu.classList.toggle('open_menu_nav');
-  
-  
-  
-  
-    })
-  
-  
-  }
-  
   
   function hazScrollers(){
   
@@ -1350,6 +1343,39 @@ function iniciaLineas(){
 
 
 }
+
+arrMenuUp = document.querySelectorAll('.nav-link');
+  
+arrMenuUp.forEach(m=>{
+    m.addEventListener('click', (b)=>{
+
+
+      menu_bot.classList.remove('open_menu');
+
+      body.classList.remove('open_menu_body');
+
+      navMenu.classList.remove('open_menu_nav');
+    });
+
+
+
+})
+
+
+menu_bot.addEventListener('click', (ev)=>{
+
+  ev.preventDefault();
+  
+  ev.currentTarget.classList.toggle('open_menu');
+
+  body.classList.toggle('open_menu_body');
+
+  navMenu.classList.toggle('open_menu_nav');
+
+
+
+
+})
 
 
 
