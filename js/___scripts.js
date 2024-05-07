@@ -71,7 +71,7 @@
   
     navMenu = document.getElementById('nav-menu');
   
-    body = document.getElementById('body');
+    body = document.getElementById('body-main');
   
   
       header = document.getElementById('header');
