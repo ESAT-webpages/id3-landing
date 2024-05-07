@@ -9,3 +9,11 @@ css/carousel.rtl
 css/cover.css
 
 css/swiper-bundle.min.css
+
+backcss
+
+node_modules
+
+package-lock.json
+
+.gitignore

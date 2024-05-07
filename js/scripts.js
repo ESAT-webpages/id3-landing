@@ -1,4 +1,9 @@
-//assets\dist\js\plugins\debug.addIndicators.min.js
+window.addEventListener('load', function() {
+  const loader = document.getElementById('loader');
+  if (loader) {
+    loader.style.display = 'none';
+  }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   const videoWrapper = document.querySelector('.video-slide-wrapper');
@@ -71,25 +76,22 @@ document.getElementById('privacyPolicy').addEventListener('click', function() {
 });
 
 function openModalLegal() {
-  // Code to open modal or popup for legal terms
-  alert('Opening legal terms...');
+  document.getElementById('legalModal').style.display = 'flex';
+  disableBodyScroll(true);
 }
 
 function openModalPrivacy() {
-  // Code to open modal or popup for privacy policy
-  alert('Opening privacy policy...');
-}
-
-function openPrivacyModal() {
   document.getElementById('privacyModal').style.display = 'flex';
-}
-
-function openLegalModal() {
-  document.getElementById('legalModal').style.display = 'flex';
+  disableBodyScroll(true);
 }
 
 function closeModal(modalId) {
   document.getElementById(modalId).style.display = 'none';
+  disableBodyScroll(false);
+}
+
+function disableBodyScroll(disable) {
+  document.body.style.overflow = disable ? 'hidden' : 'auto';
 }
 
   var header;

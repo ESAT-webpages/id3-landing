@@ -1,0 +1,16 @@
+{  
+  "browserslist": [
+  "last 2 versions",
+  "> 0.5%"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "gulp": "^5.0.0",
+    "gulp-postcss": "^10.0.0",
+    "postcss": "^8.4.38"
+  },
+  "scripts": {
+    "build": "gulp",
+    "watch": "gulp watch"
+  }
+}
