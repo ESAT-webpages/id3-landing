@@ -1090,9 +1090,6 @@ header {
 }
 
 
-
-
-
 .nav-menu{
   position: fixed;
   background-color: #ef7808; 
@@ -1603,6 +1600,19 @@ header {
 
 @media (min-width: 768px) {
   /* md */
+
+  .menu_bot   #menu_close{
+    display: none;
+    right: 15px;
+  }
+
+  .menu_bot.open_menu  #menu_open{
+    display: none;
+  }
+
+  .menu_bot.open_menu  #menu_close{
+    display: flex;
+  }
 
   .legal-container {
     padding: 4rem
