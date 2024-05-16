@@ -12,6 +12,8 @@ css/swiper-bundle.min.css
 
 backcss
 
+backjs
+
 node_modules
 
 package-lock.json
